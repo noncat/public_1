@@ -1,5 +1,5 @@
 # Прохоров Антон Сергеевич
-**Целевая позиция - Data Engineer**
+🚀 **Целевая позиция - Data Engineer**
 
 ## Контакты и личные данные
 - Email: tessaxmail@gmail.com

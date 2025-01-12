@@ -1,5 +1,5 @@
 # Прохоров Антон Сергеевич
-**Целевая позиция - DevOps Engineer**
+🚀 **Целевая позиция - DevOps Engineer**
 
 ## Контакты и личная информация
 - Email: tessaxmail@gmail.com
