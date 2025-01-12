@@ -1,5 +1,5 @@
 # Прохоров Антон Сергеевич
-Data Engineer | 38 лет
+**Data Engineer | 38 лет**
 
 ## Контакты
 - Email: tessaxmail@gmail.com
@@ -36,8 +36,8 @@ Data Engineer | 38 лет
 - Специализация: технологии и архитектура больших данных
 - Объем: 360 академических часов
 
-**[1T State Certificate - Prokhorov A.S.](certificates/1T%20state%20certificate%20Prokhorov%20A.S..pdf)**  
-**[Diploma of Professional Retraining - Prokhorov A.S.](certificates/Prokhorov%20A.S.%20diploma%20professional%20retraining.pdf)**
+**[1T State Certificate - Prokhorov A.S.](certificates/1t_state_certificate_prokhorov_a.s.pdf)**  
+**[Diploma of Professional Retraining - Prokhorov A.S.](certificates/prokhorov_a.s._diploma_professional_retraining.pdf)**
 
 ## Дополнительное образование
 - Курс по ручному тестированию (QA) (2022)
@@ -47,7 +47,7 @@ Data Engineer | 38 лет
   - Основы обеспечения качества
 
 ## Опыт работы
-**MICROS PAK JV LLC** (2023-2024)  
+**MICROS PAK JV LLC** (2023-2025)  
 Руководитель отдела продаж
 - Внедрение и оптимизация CRM-систем
 - Разработка систем аналитической отчетности
