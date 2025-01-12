@@ -36,6 +36,12 @@ DevOps Engineer | 38 лет
 - Специализация: технологии и архитектура больших данных
 - Объем: 360 академических часов
 
+**[1T State Certificate - Prokhorov A.S.](certificates/1T%20state%20certificate%20Prokhorov%20A.S..pdf)**  
+**[Diploma of Professional Retraining - Prokhorov A.S.](certificates/Prokhorov%20A.S.%20diploma%20professional%20retraining.pdf)**
+
+
+
+
 ## Дополнительное образование
 - Курс по ручному тестированию (QA) (2022)
  - Разработка тест-кейсов и тестовой документации
