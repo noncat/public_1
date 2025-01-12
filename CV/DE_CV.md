@@ -3,7 +3,7 @@
 
 ## Контакты и личные данные
 - Email: tessaxmail@gmail.com
-- Телефон: [+998910069780](tel:+998910069780) / [WhatsApp](https://wa.me/998910069780)
+- Телефон: **[+998910069780](tel:+998910069780)** / [WhatsApp](https://wa.me/998910069780)
 - Telegram: [@Ant0n_Prokhorov](https://t.me/Ant0n_Prokhorov)
 - Город: Ташкент
 - Гражданство: Россия
