@@ -36,11 +36,8 @@
 - Специализация: технологии и архитектура больших данных
 - Объем: 360 академических часов
 
-**[1T State Certificate - Prokhorov A.S.](certificates/1T%20state%20certificate%20Prokhorov%20A.S..pdf)**  
-**[Diploma of Professional Retraining - Prokhorov A.S.](certificates/Prokhorov%20A.S.%20diploma%20professional%20retraining.pdf)**
-
-
-
+**[1T State Certificate - Prokhorov A.S.](https://github.com/noncat/public_1/blob/main/certificates/1t_state_certificate_prokhorov_a.s.pdf)**  
+**[Diploma of Professional Retraining - Prokhorov A.S.](https://github.com/noncat/public_1/blob/main/certificates/prokhorov_a.s._diploma_professional_retraining.pdf)**
 
 ## Дополнительное образование
 - Курс по ручному тестированию (QA) (2022)
