@@ -1,3 +1,5 @@
 DEV.code-workspace
 noncat.code-profile
 test/
+data/
+src/

@@ -1,0 +1,25 @@
+services:
+  api_service:
+    build: .
+    container_name: project_api_service
+    command: uvicorn api.api:app --host 0.0.0.0 --port your_port --reload
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    ports:
+      - "your_port:your_port"
+    volumes:
+      - .:/app
+    restart: always
+    networks:
+      - agent_default  # Подключаем к сети
+
+networks:
+  agent_default:
+    external: true  # Указываем, что это внешняя сеть

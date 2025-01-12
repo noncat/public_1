@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  webbot2:
+    build: .
+    container_name: webbot2
+    ports:
+      - "your_port:5000"
+    networks:
+      - agent_default
+    restart: unless-stopped
+networks:
+  agent_default:
+    external: true

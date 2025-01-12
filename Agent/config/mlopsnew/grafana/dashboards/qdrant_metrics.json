@@ -1,0 +1,373 @@
+{
+ "annotations": {
+   "list": []
+ },
+ "editable": true,
+ "fiscalYearStartMonth": 0,
+ "graphTooltip": 0,
+ "links": [],
+ "liveNow": false,
+ "templating": {
+   "list": [
+     {
+       "current": {
+         "selected": false,
+         "text": "All",
+         "value": "$__all"
+       },
+       "datasource": "Prometheus",
+       "definition": "label_values(collections_total, instance)",
+       "hide": 0,
+       "includeAll": true,
+       "label": "Instance",
+       "multi": false,
+       "name": "instance",
+       "options": [],
+       "query": "label_values(collections_total, instance)",
+       "refresh": 1,
+       "regex": "",
+       "skipUrlSync": false,
+       "sort": 0,
+       "type": "query"
+     }
+   ]
+ },
+ "panels": [
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 6,
+       "x": 0,
+       "y": 0
+     },
+     "options": {
+       "colorMode": "value",
+       "graphMode": "area",
+       "justifyMode": "auto",
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "textMode": "auto"
+     },
+     "title": "Collections Count",
+     "type": "stat",
+     "targets": [
+       {
+         "expr": "collections_total{instance=~\"$instance\"}",
+         "legendFormat": "{{instance}}"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 6,
+       "x": 6,
+       "y": 0
+     },
+     "options": {
+       "colorMode": "value",
+       "graphMode": "area",
+       "justifyMode": "auto",
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "textMode": "auto"
+     },
+     "title": "Total Vectors",
+     "type": "stat",
+     "targets": [
+       {
+         "expr": "collections_vector_total{instance=~\"$instance\"}",
+         "legendFormat": "{{instance}}"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "custom": {
+           "axisCenteredZero": false,
+           "axisColorMode": "text",
+           "axisLabel": "",
+           "axisPlacement": "auto",
+           "barAlignment": 0,
+           "drawStyle": "line",
+           "fillOpacity": 25,
+           "gradientMode": "none",
+           "hideFrom": {
+             "legend": false,
+             "tooltip": false,
+             "viz": false
+           },
+           "lineInterpolation": "smooth",
+           "lineWidth": 2,
+           "pointSize": 5,
+           "scaleDistribution": {
+             "type": "linear"
+           },
+           "showPoints": "never",
+           "spanNulls": false,
+           "stacking": {
+             "group": "A",
+             "mode": "none"
+           },
+           "thresholdsStyle": {
+             "mode": "off"
+           }
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         },
+         "unit": "s"
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 12,
+       "x": 12,
+       "y": 0
+     },
+     "options": {
+       "legend": {
+         "calcs": ["mean", "max"],
+         "displayMode": "list",
+         "placement": "bottom",
+         "showLegend": true
+       },
+       "tooltip": {
+         "mode": "single",
+         "sort": "none"
+       }
+     },
+     "title": "Request Latency",
+     "type": "timeseries",
+     "targets": [
+       {
+         "expr": "histogram_quantile(0.95, sum by (le, instance) (rate(rest_responses_duration_seconds_bucket{instance=~\"$instance\"}[5m])))",
+         "legendFormat": "{{instance}} 95th percentile"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "custom": {
+           "axisCenteredZero": false,
+           "axisColorMode": "text",
+           "axisLabel": "",
+           "axisPlacement": "auto",
+           "barAlignment": 0,
+           "drawStyle": "line",
+           "fillOpacity": 25,
+           "gradientMode": "none",
+           "hideFrom": {
+             "legend": false,
+             "tooltip": false,
+             "viz": false
+           },
+           "lineInterpolation": "smooth",
+           "lineWidth": 2,
+           "pointSize": 5,
+           "scaleDistribution": {
+             "type": "linear"
+           },
+           "showPoints": "never",
+           "spanNulls": false,
+           "stacking": {
+             "group": "A",
+             "mode": "none"
+           },
+           "thresholdsStyle": {
+             "mode": "off"
+           }
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         },
+         "unit": "bytes"
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 12,
+       "x": 0,
+       "y": 8
+     },
+     "options": {
+       "legend": {
+         "calcs": ["mean", "max"],
+         "displayMode": "list",
+         "placement": "bottom",
+         "showLegend": true
+       },
+       "tooltip": {
+         "mode": "single",
+         "sort": "none"
+       }
+     },
+     "title": "Memory Usage",
+     "type": "timeseries",
+     "targets": [
+       {
+         "expr": "memory_allocated_bytes{instance=~\"$instance\"}",
+         "legendFormat": "{{instance}} Allocated"
+       },
+       {
+         "expr": "memory_resident_bytes{instance=~\"$instance\"}",
+         "legendFormat": "{{instance}} Resident"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "custom": {
+           "axisCenteredZero": false,
+           "axisColorMode": "text",
+           "axisLabel": "",
+           "axisPlacement": "auto",
+           "barAlignment": 0,
+           "drawStyle": "line",
+           "fillOpacity": 25,
+           "gradientMode": "none",
+           "hideFrom": {
+             "legend": false,
+             "tooltip": false,
+             "viz": false
+           },
+           "lineInterpolation": "smooth",
+           "lineWidth": 2,
+           "pointSize": 5,
+           "scaleDistribution": {
+             "type": "linear"
+           },
+           "showPoints": "never",
+           "spanNulls": false,
+           "stacking": {
+             "group": "A",
+             "mode": "none"
+           },
+           "thresholdsStyle": {
+             "mode": "off"
+           }
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 12,
+       "x": 12,
+       "y": 8
+     },
+     "options": {
+       "legend": {
+         "calcs": ["mean", "last"],
+         "displayMode": "list",
+         "placement": "bottom",
+         "showLegend": true
+       },
+       "tooltip": {
+         "mode": "single",
+         "sort": "none"
+       }
+     },
+     "title": "REST API Responses",
+     "type": "timeseries",
+     "targets": [
+       {
+         "expr": "rate(rest_responses_total{instance=~\"$instance\"}[5m])",
+         "legendFormat": "{{instance}} Success Rate"
+       },
+       {
+         "expr": "rate(rest_responses_fail_total{instance=~\"$instance\"}[5m])",
+         "legendFormat": "{{instance}} Error Rate"
+       }
+     ]
+   }
+ ],
+ "refresh": "5s",
+ "schemaVersion": 38,
+ "style": "dark",
+ "tags": ["qdrant"],
+ "title": "Qdrant Metrics",
+ "version": 2
+}

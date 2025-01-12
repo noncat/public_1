@@ -1,0 +1,45 @@
+global:
+ scrape_interval: 5s
+ evaluation_interval: 5s
+scrape_configs:
+ - job_name: 'agent_metrics'
+   metrics_path: '/metrics'
+   scrape_interval: 15s
+   static_configs:
+     - targets: ['agent-exporter:9090']
+       labels:
+         instance: 'agent_metrics'
+         service: 'agent'
+ - job_name: 'qdrant'
+   metrics_path: '/metrics'
+   static_configs:
+     - targets: ['172.20.0.6:6333']
+       labels:
+         instance: 'qdrant'
+         service: 'qdrant'
+ - job_name: 'qdrant_new'
+   metrics_path: '/metrics'
+   static_configs:
+     - targets: ['qdrant_new:6333']
+       labels:
+         instance: 'qdrant_new'
+         service: 'qdrant'
+ - job_name: 'dcgm'
+   metrics_path: '/metrics'
+   scrape_interval: 1s
+   static_configs:
+     - targets: ['dcgm-exporter_new:9400']
+       labels:
+         instance: 'gpu_metrics'
+ - job_name: 'node'
+   static_configs:
+     - targets: ['node-exporter_new:9100']
+       labels:
+         instance: 'node_metrics'
+ - job_name: 'saiga'
+   metrics_path: '/metrics'
+   static_configs:
+     - targets: ['saiga_saiga_1:8010']
+       labels:
+         instance: 'saiga'
+         service: 'llm'

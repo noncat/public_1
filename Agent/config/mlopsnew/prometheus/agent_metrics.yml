@@ -1,0 +1,32 @@
+# Метрики вовлеченности
+engagement_metrics:
+ - user_count
+ - interaction_frequency
+ - session_completion_rate
+ - session_abandonment_rate
+ - retention_rate
+
+# Метрики эффективности
+performance_metrics:
+ - response_time
+ - answer_accuracy
+ - success_rate
+ - failure_rate
+ - operator_handoff_rate
+ - average_resolution_time
+
+# Метрики удовлетворенности (отключены)
+# satisfaction_metrics:
+#   - satisfaction_rating
+#   - feedback_count
+#   - positive_feedback_rate
+
+# Метрики Saiga
+saiga_metrics:
+ - gpu_usage
+ - gpu_memory
+ - request_count
+ - response_time
+ - tokens_generated
+ - tokens_prompt
+ - error_rate

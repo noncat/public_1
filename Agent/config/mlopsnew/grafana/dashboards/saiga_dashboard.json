@@ -1,0 +1,78 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": null,
+    "title": "Saiga LLM Dashboard",
+    "tags": ["llm", "saiga"],
+    "timezone": "browser",
+    "schemaVersion": 21,
+    "version": 0,
+    "refresh": "10s",
+    "panels": [
+      {
+        "title": "Request Rate",
+        "type": "stat",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(saiga_requests_total{status='success'}[5m])",
+            "legendFormat": "Requests/sec"
+          }
+        ]
+      },
+      {
+        "title": "Response Time",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(saiga_response_time_seconds_sum[5m]) / rate(saiga_response_time_seconds_count[5m])",
+            "legendFormat": "Avg Response Time"
+          }
+        ]
+      }
+      ,
+      {
+        "title": "Token Statistics",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(saiga_tokens_generated_total[5m])",
+            "legendFormat": "Generated Tokens/sec"
+          },
+          {
+            "expr": "rate(saiga_tokens_prompt_total[5m])",
+            "legendFormat": "Prompt Tokens/sec"
+          }
+        ]
+      },
+      {
+        "title": "GPU Usage",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "saiga_gpu_memory_usage_bytes",
+            "legendFormat": "GPU Memory"
+          },
+          {
+            "expr": "saiga_gpu_utilization_percent",
+            "legendFormat": "GPU Utilization"
+          }
+        ]
+      },
+      {
+        "title": "Error Rate",
+        "type": "graph",
+        "datasource": "Prometheus",
+        "targets": [
+          {
+            "expr": "rate(saiga_errors_total[5m])",
+            "legendFormat": "{{type}}"
+          }
+        ]
+      }
+    ]
+  }
+}

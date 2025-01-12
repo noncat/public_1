@@ -1,0 +1,27 @@
+version: '3'
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant_new
+    restart: unless-stopped
+    ports:
+      - "your_port:6333"
+      - "your_port:6334"
+    volumes:
+      - qdrant_storage_new:/qdrant/storage
+    environment:
+      - QDRANT_ALLOW_RECOVERY=true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "3"
+    networks:
+      - mlopsnew
+
+networks:
+  mlopsnew:
+    external: true
+
+volumes:
+  qdrant_storage_new:

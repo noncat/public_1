@@ -1,0 +1,23 @@
+version: '3'
+
+networks:
+  mlopsnew:
+    name: mlopsnew
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/16
+          gateway: 172.22.0.1
+
+volumes:
+  jupyterhub_data_new:
+  ollama_new:
+  qdrant_storage_new:
+  prometheus_data_new:
+  grafana_data_new:
+
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "100m"
+    max-file: "3"

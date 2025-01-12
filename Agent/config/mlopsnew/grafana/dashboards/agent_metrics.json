@@ -1,0 +1,430 @@
+{
+ "annotations": {
+   "list": []
+ },
+ "editable": true,
+ "fiscalYearStartMonth": 0,
+ "graphTooltip": 0,
+ "links": [],
+ "liveNow": false,
+ "panels": [
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 8,
+       "x": 0,
+       "y": 0
+     },
+     "id": 1,
+     "options": {
+       "colorMode": "value",
+       "graphMode": "area",
+       "justifyMode": "auto",
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "textMode": "auto"
+     },
+     "title": "Уникальные пользователи за 24 часа",
+     "type": "stat",
+     "targets": [
+       {
+         "expr": "agent_unique_users_24h",
+         "legendFormat": "Users"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 8,
+       "x": 8,
+       "y": 0
+     },
+     "id": 2,
+     "options": {
+       "colorMode": "value",
+       "graphMode": "area",
+       "justifyMode": "auto",
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "textMode": "auto"
+     },
+     "title": "Общее количество взаимодействий",
+     "type": "stat",
+     "targets": [
+       {
+         "expr": "agent_interactions_total",
+         "legendFormat": "Total"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 8,
+       "x": 16,
+       "y": 0
+     },
+     "id": 3,
+     "options": {
+       "colorMode": "value",
+       "graphMode": "area",
+       "justifyMode": "auto",
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "textMode": "auto"
+     },
+     "title": "Уникальные темы",
+     "type": "stat",
+     "targets": [
+       {
+         "expr": "agent_topics_total",
+         "legendFormat": "Topics"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "custom": {
+           "axisCenteredZero": false,
+           "axisColorMode": "text",
+           "axisLabel": "",
+           "axisPlacement": "auto",
+           "barAlignment": 0,
+           "drawStyle": "line",
+           "fillOpacity": 25,
+           "gradientMode": "none",
+           "hideFrom": {
+             "legend": false,
+             "tooltip": false,
+             "viz": false
+           },
+           "lineInterpolation": "smooth",
+           "lineWidth": 2,
+           "pointSize": 5,
+           "scaleDistribution": {
+             "type": "linear"
+           },
+           "showPoints": "never",
+           "spanNulls": false,
+           "stacking": {
+             "group": "A",
+             "mode": "none"
+           },
+           "thresholdsStyle": {
+             "mode": "off"
+           }
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         },
+         "unit": "s"
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 12,
+       "x": 0,
+       "y": 8
+     },
+     "id": 4,
+     "options": {
+       "legend": {
+         "calcs": ["mean", "max"],
+         "displayMode": "list",
+         "placement": "bottom",
+         "showLegend": true
+       },
+       "tooltip": {
+         "mode": "single",
+         "sort": "none"
+       }
+     },
+     "title": "Время ответа",
+     "type": "timeseries",
+     "targets": [
+       {
+         "expr": "histogram_quantile(0.95, sum(rate(agent_response_time_seconds_bucket[5m])) by (le))",
+         "legendFormat": "95th percentile"
+       },
+       {
+         "expr": "histogram_quantile(0.50, sum(rate(agent_response_time_seconds_bucket[5m])) by (le))",
+         "legendFormat": "median"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "palette-classic"
+         },
+         "custom": {
+           "axisCenteredZero": false,
+           "axisColorMode": "text",
+           "axisLabel": "",
+           "axisPlacement": "auto",
+           "barAlignment": 0,
+           "drawStyle": "line",
+           "fillOpacity": 25,
+           "gradientMode": "none",
+           "hideFrom": {
+             "legend": false,
+             "tooltip": false,
+             "viz": false
+           },
+           "lineInterpolation": "smooth",
+           "lineWidth": 2,
+           "pointSize": 5,
+           "scaleDistribution": {
+             "type": "linear"
+           },
+           "showPoints": "never",
+           "spanNulls": false,
+           "stacking": {
+             "group": "A",
+             "mode": "none"
+           },
+           "thresholdsStyle": {
+             "mode": "off"
+           }
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "green",
+               "value": null
+             }
+           ]
+         }
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 12,
+       "x": 12,
+       "y": 8
+     },
+     "id": 5,
+     "options": {
+       "legend": {
+         "calcs": ["mean", "max"],
+         "displayMode": "list",
+         "placement": "bottom",
+         "showLegend": true
+       },
+       "tooltip": {
+         "mode": "single",
+         "sort": "none"
+       }
+     },
+     "title": "Длина ответов",
+     "type": "timeseries",
+     "targets": [
+       {
+         "expr": "histogram_quantile(0.95, sum(rate(agent_answer_length_chars_bucket[5m])) by (le))",
+         "legendFormat": "95th percentile"
+       },
+       {
+         "expr": "histogram_quantile(0.50, sum(rate(agent_answer_length_chars_bucket[5m])) by (le))",
+         "legendFormat": "median"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "thresholds"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "red",
+               "value": null
+             },
+             {
+               "color": "yellow",
+               "value": 30
+             },
+             {
+               "color": "green",
+               "value": 60
+             }
+           ]
+         },
+         "unit": "percent"
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 8,
+       "x": 0,
+       "y": 16
+     },
+     "id": 6,
+     "options": {
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "showThresholdLabels": false,
+       "showThresholdMarkers": true
+     },
+     "title": "Распределение по времени ответа",
+     "type": "gauge",
+     "targets": [
+       {
+         "expr": "sum(agent_response_time_seconds_bucket{le=\"10.0\"}) / sum(agent_response_time_seconds_count) * 100",
+         "legendFormat": "< 10s"
+       }
+     ]
+   },
+   {
+     "datasource": "Prometheus",
+     "fieldConfig": {
+       "defaults": {
+         "color": {
+           "mode": "thresholds"
+         },
+         "mappings": [],
+         "thresholds": {
+           "mode": "absolute",
+           "steps": [
+             {
+               "color": "red",
+               "value": null
+             },
+             {
+               "color": "yellow",
+               "value": 30
+             },
+             {
+               "color": "green",
+               "value": 60
+             }
+           ]
+         },
+         "unit": "percent"
+       }
+     },
+     "gridPos": {
+       "h": 8,
+       "w": 8,
+       "x": 8,
+       "y": 16
+     },
+     "id": 7,
+     "options": {
+       "orientation": "auto",
+       "reduceOptions": {
+         "calcs": ["lastNotNull"],
+         "fields": "",
+         "values": false
+       },
+       "showThresholdLabels": false,
+       "showThresholdMarkers": true
+     },
+     "title": "Распределение по длине ответов",
+     "type": "gauge",
+     "targets": [
+       {
+         "expr": "sum(agent_answer_length_chars_bucket{le=\"500.0\"}) / sum(agent_answer_length_chars_count) * 100",
+         "legendFormat": "< 500 chars"
+       }
+     ]
+   }
+ ],
+ "refresh": "5s",
+ "schemaVersion": 38,
+ "style": "dark",
+ "tags": ["agent"],
+ "title": "Agent Metrics",
+ "version": 1
+}
