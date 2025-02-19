@@ -101,6 +101,7 @@
 
 **[1T State Certificate - Prokhorov A.S.](https://github.com/noncat/public_1/blob/main/certificates/1t_state_certificate_prokhorov_a.s.pdf)**  
 **[Diploma of Professional Retraining - Prokhorov A.S.](https://github.com/noncat/public_1/blob/main/certificates/prokhorov_a.s._diploma_professional_retraining.pdf)**
+**[Reference Letter - Prokhorov A.S.](https://github.com/noncat/public_1/blob/main/certificates/prokhorov_a.s._diploma_professional_retraining.pdf)**
 
 **Самарский государственный технический университет** (2016-2023)
 - Факультет: Нефтегазовое дело
