@@ -19,6 +19,7 @@
 - Prometheus/Grafana
 - PostgreSQL
 - Nginx
+- Flask
 - Bash-скрипты для автоматизации
 - Системы резервного копирования
 - Linux (Ubuntu)
