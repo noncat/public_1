@@ -1,4 +1,8 @@
-# ML Infrastructure Documentation
+## Q-oneT: Интеллектуальный диалоговый ассистент для образования
+
+<div align="center">
+  <img src="/Agent/screenshots/1.jpg" alt="Авторизация" width="600" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
+</div>
 
 ## Основные документы
 1. [Инфраструктура](docs/ml-infrastructure-main_12122024.md)
@@ -8,12 +12,6 @@
 5. [Мониторинг и ресурсы](docs/ml-infrastructure-monitoring12122024.md)
 6. [Резервное копирование](docs/ml-infrastructure-backup12122024.md)
 
-
-## Q-oneT: Интеллектуальный диалоговый ассистент для образования
-
-<div align="center">
-  <img src="/Agent/screenshots/1.jpg alt="Q-oneT" width="600" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-</div>
 
 ### Обзор
 Q-oneT — интеллектуальный диалоговый агент, разработанный для поддержки студентов по направлениям Data Science, Data Analytics, DevOps и Product Management. Система способна быстро и точно отвечать на вопросы пользователей, опираясь на внутреннюю базу знаний и интеграцию с языковыми моделями.
@@ -86,16 +84,22 @@ Q-oneT способен обрабатывать разнообразные ти
 - **Разъяснение концепций**: "Объясни принципы работы Kubernetes"
 - **Неформальное общение**: "Расскажи анекдот про product manager"
 
-<table align="center" border="0">
+<table align="center" border="0" cellspacing="0" cellpadding="10">
   <tr>
-    <td><img src="/Agent/screenshots/3.portfolio_question.jpg" alt="Пример резюме" width="250"/></td>
-    <td><img src="/Agent/screenshots/4.joke_question.jpg" alt="Анекдот" width="250"/></td>
-    <td><img src="/Agent/screenshots/5.python_question.jpg" alt="Матричное умножение" width="250"/></td>
+    <td align="center">
+      <img src="/Agent/screenshots/3.portfolio_question.jpg" alt="Пример резюме" width="300" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); max-width: 100%;"/>
+    </td>
+    <td align="center">
+      <img src="/Agent/screenshots/4.joke_question.jpg" alt="Анекдот" width="300" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); max-width: 100%;"/>
+    </td>
+    <td align="center">
+      <img src="/Agent/screenshots/5.python_question.jpg" alt="Матричное умножение" width="300" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); max-width: 100%;"/>
+    </td>
   </tr>
   <tr>
-    <td align="center"><em>Помощь с резюме</em></td>
-    <td align="center"><em>Неформальное общение</em></td>
-    <td align="center"><em>Техническая поддержка</em></td>
+    <td align="center"><b>Помощь с резюме</b><br><small>Рекомендации по составлению профессионального резюме для Product Manager</small></td>
+    <td align="center"><b>Неформальное общение</b><br><small>Легкое общение и профессиональный юмор</small></td>
+    <td align="center"><b>Техническая поддержка</b><br><small>Помощь с программированием и объяснение технических концепций</small></td>
   </tr>
 </table>
 
