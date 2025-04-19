@@ -199,7 +199,7 @@ JupyterHub предоставляет изолированные рабочие 
 
 ## 7. Диаграмма архитектуры
 
-![Диаграмма архитектуры](/screenshots/firetech_architecture_diagram.png)
+![Диаграмма архитектуры](/FireFighterRL/screenshots/firetech_architecture_diagram.png)
 
 ## 8. Заключение
 
