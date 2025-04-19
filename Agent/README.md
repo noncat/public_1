@@ -29,9 +29,11 @@ Q-oneT — интеллектуальный диалоговый агент, р�
 - DevOps
 - Product Manager
 
-<div align="center">
-  <img src="/Agent/screenshots/2.authorization.jpg" alt="Авторизация" width="600" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"/>
-</div>
+<p align="center">
+  <img src="/Agent/screenshots/2.authorization.jpg" alt="Экран входа Q-oneT" width="400" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"/>
+  <br>
+  <em>Технологическая архитектура: экран выбора курса</em>
+</p>
 
 ### Технологическая архитектура
 
